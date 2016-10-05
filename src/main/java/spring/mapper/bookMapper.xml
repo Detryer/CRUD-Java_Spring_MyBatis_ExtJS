@@ -1,0 +1,42 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.mapper.BookMapper">
+    <resultMap id="book" type="spring.model.Book">
+        <id property="bookId" column="id"/>
+        <result property="bookId" column="id"/>
+        <result property="bookTitle" column="title"/>
+        <result property="bookGenre" column="genre"/>
+        <result property="authorName" column="name"/>
+    </resultMap>
+
+    <select id="listBooks" resultMap="book">
+        SELECT
+          book.title,
+          book.genre,
+          author.name
+        FROM book
+        LEFT JOIN author
+        ON author.id = book.author_id
+    </select>
+
+    <insert id="addBook" parameterType="Book">
+        INSERT INTO book(title, genre, )
+        VALUES(#{bookTitle}, #{bookGenre})
+    </insert>
+
+    <update id="updateBook" parameterType="Book">
+        UPDATE books
+        SET
+        book.title= #{bookTitle},
+        book.genre = #{bookGenre}
+        WHERE book.id = #{bookId}
+        UPDATE authors
+        SET
+        authors.name = #{authorName},
+        WHERE authors.id = #{authorId}
+    </update>
+
+    <delete id="deleteBook" parameterType="int">
+        DELETE FROM books WHERE id = #{bookId}
+        DELETE FROM authors WHERE authors.id = #{authorId}
+    </delete>
+</mapper>

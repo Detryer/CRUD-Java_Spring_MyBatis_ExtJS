@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: whitesmoke;
+}
+
+.books_table {
+    background: white;
+    width: 50%;
+    margin: 50px 25% 50px;
+    min-height: 30px;
+}
+
+.books_headers {
+    background: #2196F3;
+    border: 1px solid #cccccc;
+    color: white;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    height: 30px;
+    line-height: 30px;
+}
+
+.books_headers > div, .books_list > div {
+    text-align: center;
+    border-left: 1px solid #cccccc;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+    height: inherit;
+    line-height: inherit;
+}
+
+.books_headers > div:first-child, .books_list > div:first-child {
+    border-left: none;
+}
+
+.list_header {
+    font-size: 1.1em;
+}
+
+.book_name {
+    width: 40%;
+}
+
+.book_genre, .book_author {
+    width: 25%;
+}
+
+.book_actions {
+    width: 10%;
+}
+
+.book_edit, .book_delete {
+    width: 5%;
+}
+
+.books_list {
+    min-height: 0;
+    line-height: 30px;
+}
+
+.book_add {
+    width: 25%;
+    margin: 200px 50% 100px 25%;
+    min-height: 30px;
+}
+
+.book_add > label {
+    display: inline-block;
+    float: left;
+    width: 40%;
+    margin-right: 10%;
+}
+
+.book_add > input {
+    display: inline-block;
+    float: right;
+    width: 50%;
+}

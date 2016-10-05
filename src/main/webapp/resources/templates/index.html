@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список книг</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="resources/css/main.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.sencha.com/ext/gpl/3.4.0/resources/css/ext-all.css">
+    <script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/3.4.0/ext-all.js"></script>
+</head>
+<body>
+<div class="books_table">
+    <div class="books_headers">
+        <div class="book_name list_header">Название</div>
+        <div class="book_genre list_header">Жанр</div>
+        <div class="book_author list_header">Автор</div>
+        <div class="book_actions list_header">Действия</div>
+    </div>
+    <div class="books_list">
+        <div class="book_name">Название</div>
+        <div class="book_genre">Жанр</div>
+        <div class="book_author">Автор</div>
+        <div class="book_edit"></div>
+        <div class="book_delete"></div>
+    </div>
+</div>
+<form class="book_add" action="#" th:action="@{/bookAdd}" th:object="${book}" method="post">
+    <label for="field_book_title">Название книги</label>
+    <input type="text" id="field_book_title" th:field="*{bookTitle}">
+    <label for="field_book_genre">Жанр</label>
+    <input type="text" id="field_book_genre" th:field="*{bookGenre}">
+    <label for="field_book_author">Автор</label>
+    <input type="text" id="field_book_author" th:field="*{authorName}">
+    <button id="add_new_book">Добавить</button>
+</form>
+</body>
+</html>
+<!--<html>-->
+<!--<head>-->
+    <!--<title>CRUD ExtJS Grid</title>-->
+
+    <!--&lt;!&ndash; ExtJS css &ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="/test/resources/css/ext-all.css" />-->
+
+    <!--&lt;!&ndash; Row Editor plugin css &ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" type="text/css" href="/extjs-crud-grid-spring-hibernate/ext-3.2.1/examples/ux/css/rowEditorCustom.css" />&ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" type="text/css" href="/extjs-crud-grid-spring-hibernate/ext-3.2.1/examples/shared/examples.css" />&ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" type="text/css" href="/extjs-crud-grid-spring-hibernate/ext-3.2.1/examples/ux/css/RowEditor.css" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash; App custom css &ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="/test/resources/css/crudgrid.css" />-->
+
+    <!--&lt;!&ndash; ExtJS js &ndash;&gt;-->
+    <!--<script src="/test/resources/ext-3.4.1.1/adapter/ext/ext-base.js"></script>-->
+    <!--<script src="/test/resources/ext-3.4.1.1/ext-all.js"></script>-->
+
+    <!--&lt;!&ndash; Row Editor plugin js &ndash;&gt;-->
+    <!--<script src="/test/resources/ext-3.4.1.1/examples/ux/RowEditor.js"></script>-->
+
+    <!--&lt;!&ndash; App js &ndash;&gt;-->
+    <!--<script src="/test/resources/js/crud-grid.js"></script>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<div id="crud-grid"></div>-->
+<!--</body>-->
+<!--</html>-->
